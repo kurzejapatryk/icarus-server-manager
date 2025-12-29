@@ -4,6 +4,7 @@ services:
  
   icarus:
     container_name: icarus-dedicated
+    build: .
     image: nerodon/icarus-dedicated:latest
     hostname: icarus-dedicated
     init: true
