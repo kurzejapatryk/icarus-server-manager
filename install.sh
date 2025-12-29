@@ -119,14 +119,25 @@ ensure_compose_and_env() {
   fi
 
   if [ ! -f "${INSTALL_DIR}/.env" ]; then
-    cat > "${INSTALL_DIR}/.env" <<'EOF'
-SERVERNAME=KMPK
-JOIN_PASSWORD=changeme
-ADMIN_PASSWORD=changeme
+    echo ""
+    echo "Configuring server settings..."
+    read -p "Enter SERVERNAME [Icarus Server]: " servername
+    servername=${servername:-"Icarus Server"}
+
+    read -p "Enter JOIN_PASSWORD [changeme]: " join_password
+    join_password=${join_password:-"changeme"}
+
+    read -p "Enter ADMIN_PASSWORD [changeme]: " admin_password
+    admin_password=${admin_password:-"changeme"}
+
+    cat > "${INSTALL_DIR}/.env" <<EOF
+SERVERNAME=$servername
+JOIN_PASSWORD=$join_password
+ADMIN_PASSWORD=$admin_password
 EOF
     chown "$USER_NAME":"$USER_NAME" "${INSTALL_DIR}/.env"
     chmod 600 "${INSTALL_DIR}/.env"
-    echo "    Created .env (edit passwords!)."
+    echo "    Created .env with provided settings."
   else
     echo "    .env already exists."
   fi
