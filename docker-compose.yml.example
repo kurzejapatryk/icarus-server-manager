@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  icarus:
+    container_name: icarus-dedicated
+    image: nerodon/icarus-dedicated:latest
+    hostname: icarus-dedicated
+    init: true
+
+    # IMPORTANT: settings managed via .env (created by installer)
+    env_file:
+      - .env
+
+    restart: unless-stopped
+
+    ports:
+      - "17777:17777/udp"
+      - "27015:27015/udp"
+
+    volumes:
+      - data:/home/steam/.wine/drive_c/icarus
+      - game:/game/icarus
+
+    # Optional overrides (you can also move these into .env if you want)
+    environment:
+      - BRANCH=public
+      - PORT=17777
+      - QUERYPORT=27015
+      - STEAM_USERID=1000
+      - STEAM_GROUPID=1000
+      - STEAM_ASYNC_TIMEOUT=60
+
+volumes:
+  data: {}
+  game: {}
