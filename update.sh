@@ -2,8 +2,8 @@
 set -euo pipefail
 
 INSTALL_DIR="/opt/icarus-server"
-SERVICE_NAME="icarus"
-USER_NAME="icarus"
+SERVICE_NAME="icarus-server-manager"
+USER_NAME="kurzejapatryk"
 
 need_root() {
   if [ "$(id -u)" -ne 0 ]; then
