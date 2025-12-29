@@ -1,0 +1,63 @@
+# =========================
+# Local runtime files
+# =========================
+.env
+.env.*
+!.env.example
+
+.lang
+
+# =========================
+# Backups / world data
+# =========================
+icarus-backups/
+*.tar
+*.tar.gz
+*.tgz
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# systemd generated files
+# =========================
+systemd/*.service
+systemd/*.timer
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+*.out
+
+# =========================
+# Temporary / cache files
+# =========================
+*.tmp
+*.swp
+*.swo
+*~
+.tmp/
+.cache/
+
+# =========================
+# Editor / IDE junk
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Shell / tooling
+# =========================
+.shellcheck/
+.bash_history

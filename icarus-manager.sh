@@ -1,4 +1,5 @@
 #!/bin/bash
+VERSION="0.1.0"
 
 SERVICE="icarus"
 CONTAINER="icarus-dedicated"
