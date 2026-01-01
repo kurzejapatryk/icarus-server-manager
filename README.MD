@@ -147,6 +147,17 @@ docker compose logs -f icarus
 docker compose pull
 ```
 
+#### Volumes Configuration
+
+The `docker-compose.yml` file includes the following volume mapping:
+
+```yaml
+volumes:
+  - /home/icarus:/home/steam/.wine/drive_c/icarus
+```
+
+This mapping provides easy access to upload your own local game saves from the host system level. The `/home/icarus` directory on the host is mapped to the game's save directory inside the container, allowing you to manage save files directly from the host.
+
 ## Backups
 
 World backups are stored in the `/home/icarus-backups` directory.
