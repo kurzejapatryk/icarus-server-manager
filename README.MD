@@ -30,7 +30,12 @@ git clone https://github.com/kurzejapatryk/icarus-server-manager.git
 cd icarus-server-manager
 ```
 
-2. Run the installer as root:
+2. Make the installer executable:
+```bash
+sudo chmod +x install.sh
+```
+
+3. Run the installer as root:
 ```bash
 sudo ./install.sh
 ```
